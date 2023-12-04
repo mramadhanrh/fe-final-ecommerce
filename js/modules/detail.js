@@ -1,4 +1,4 @@
-import apiRoutes from "../constants/apiRoutes";
+import apiRoutes from "../constants/apiRoutes.js";
 
 const loadProductDetail = async () => {
   const query = window.location.search;
