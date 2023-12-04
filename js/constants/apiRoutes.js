@@ -1,11 +1,12 @@
 const baseApiUrl =
   window.location.hostname === "localhost"
     ? "http://localhost:3000"
-    : "PATH_URL_API_RAILWAY";
+    : "https://be-final-ecommerce-production.up.railway.app";
 
 const apiRoutes = {
   auth: `${baseApiUrl}/auth`,
   products: `${baseApiUrl}/products`,
+  productsId: (id) => `${baseApiUrl}/products/${id}`,
 };
 
 export default apiRoutes;
