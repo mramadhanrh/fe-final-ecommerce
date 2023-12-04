@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .product-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+
+      .product-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease-in-out;
+      }
+
+      .product-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .product-info {
+        padding: 15px;
+      }
+
+      .product-title {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .product-price {
+        font-size: 16px;
+        color: #e44d26;
+      }
+    </style>
+  </head>
+  <script src="./js/modules/products.js" type="module"></script>
+  <body>
+    <script>
+      function redirectToDetail(id) {
+        window.location.href = `/detail?id=${id}`;
+      }
+    </script>
+
+    <h1>Product List</h1>
+
+    <div id="product-container" class="product-container">
+      <!-- Add more product cards as needed -->
+    </div>
+  </body>
+</html>
