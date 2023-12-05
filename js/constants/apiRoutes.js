@@ -4,7 +4,7 @@ const baseApiUrl =
     : "https://be-final-ecommerce-production.up.railway.app";
 
 const apiRoutes = {
-  auth: `${baseApiUrl}/auth`,
+  auth: `${baseApiUrl}/auth/login`,
   products: `${baseApiUrl}/products`,
   productsId: (id) => `${baseApiUrl}/products/${id}`,
 };

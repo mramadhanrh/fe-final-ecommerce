@@ -1,14 +1,22 @@
 import { loadAuth } from "../api/auth.js";
 
 const handleFormSubmit = async (event) => {
-  event.preventDefault();
+  try {
+    event.preventDefault();
 
-  const formData = new FormData(event.target);
-  const { email, password } = Object.fromEntries(formData);
+    const formData = new FormData(event.target);
+    const { email, password } = Object.fromEntries(formData);
 
-  await loadAuth(email, password);
+    const accessToken = await loadAuth(email, password);
 
-  window.location.href = "/products";
+    // Access token akan disimpan jika response API berhasil
+    localStorage.setItem("accessToken", accessToken);
+    window.location.href = "/products";
+  } catch (e) {
+    // Error message dari server akan dimunculkan jika response gagal
+    // Lihat js\api\auth.js
+    alert(e.message);
+  }
 };
 
 const setRegisterFormSubmit = () => {
