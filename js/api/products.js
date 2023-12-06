@@ -10,6 +10,11 @@ export const loadProducts = async () => {
   });
   const responseJson = await response.json();
 
+  if (response.status === 401) {
+    alert("Invalid session");
+    window.location.href = "./";
+  }
+
   return responseJson;
 };
 
@@ -22,6 +27,11 @@ export const loadProductById = async (id) => {
     },
   });
   const responseJson = await response.json();
+
+  if (response.status === 401) {
+    alert("Invalid session");
+    window.location.href = "./";
+  }
 
   return responseJson;
 };
